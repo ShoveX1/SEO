@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="contenedor-mapa"></div>
+
+    <script>
+        fetch("imagen_plano/planovirtual 1_edit_ids.svg")
+            .then(res => res.text())
+            .then(svgData => {
+                document.getElementById("contenedor-mapa").innerHTML = svgData;
+
+                const elemento = document.getElementById("l-1");
+                if (elemento) {
+                    elemento.setAttribute("fill", "red");
+                }else{
+                    console.log("No se encontro el elemento con el nombre l-1");
+                }
+
+            });
+    </script>
+    
+</body>
+</html>
